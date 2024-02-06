@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>פוסטל השלילי</title>
+    <style>
+      html {
+        height: 100%;
+        width: 100%;
+      }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>פוסטל השלילי</h1>
+        </header>
+        <input type="text" id="textInput" placeholder="Write your sentence here...">
+        <button onclick="Postel()">Submit</button>
+        <p id="textOutput"></p>
+    </div>
+
+    <script>
+        function Postel() {
+            var text = document.getElementById('textInput').value;
+            var words = text.split(' ');
+            var negativeWords = words.map(word => word + ' שלילי');
+            var negativeSentence = negativeWords.join(' ');
+            document.getElementById('textOutput').innerHTML = negativeSentence;
+        }
+    </script>
+</body>
+</html>
